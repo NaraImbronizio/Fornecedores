@@ -1,0 +1,95 @@
+﻿@model Fornecedores.Models.Fornecedor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<body style="background-image: linear-gradient(#F2F2F2, #8DB9F2); color: #035AA6;">
+    <div class="container py-4">
+        <h1 style="color: #035AA6; margin-bottom: 1rem;">Dados do Fornecedor</h1>
+
+        <div>
+            <h4 style="color: #035AA6;">Fornecedor</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2" style="color: #035AA6;">
+                    @Html.DisplayNameFor(model => model.RazaoSocial)
+                </dt>
+                <dd class="col-sm-10" style="color: #8DB9F2;">
+                    @Html.DisplayFor(model => model.RazaoSocial)
+                </dd>
+                <dt class="col-sm-2" style="color: #035AA6;">
+                    @Html.DisplayNameFor(model => model.NomeFantasia)
+                </dt>
+                <dd class="col-sm-10" style="color: #8DB9F2;">
+                    @Html.DisplayFor(model => model.NomeFantasia)
+                </dd>
+                <dt class="col-sm-2" style="color: #035AA6;">
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+                <dd class="col-sm-10" style="color: #8DB9F2;">
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+                <dt class="col-sm-2" style="color: #035AA6;">
+                    @Html.DisplayNameFor(model => model.Telefone)
+                </dt>
+                <dd class="col-sm-10" style="color: #8DB9F2;">
+                    @Html.DisplayFor(model => model.Telefone)
+                </dd>
+                <dt class="col-sm-2" style="color: #035AA6;">
+                    @Html.DisplayNameFor(model => model.Logradouro)
+                </dt>
+                <dd class="col-sm-10" style="color: #8DB9F2;">
+                    @Html.DisplayFor(model => model.Logradouro)
+                </dd>
+                <dt class="col-sm-2" style="color: #035AA6;">
+                    @Html.DisplayNameFor(model => model.Numero)
+                </dt>
+                <dd class="col-sm-10" style="color: #8DB9F2;">
+                    @Html.DisplayFor(model => model.Numero)
+                </dd>
+                <dt class="col-sm-2" style="color: #035AA6;">
+                    @Html.DisplayNameFor(model => model.Complemento)
+                </dt>
+                <dd class="col-sm-10" style="color: #8DB9F2;">
+                    @Html.DisplayFor(model => model.Complemento)
+                </dd>
+                <dt class="col-sm-2" style="color: #035AA6;">
+                    @Html.DisplayNameFor(model => model.Bairro)
+                </dt>
+                <dd class="col-sm-10" style="color: #8DB9F2;">
+                    @Html.DisplayFor(model => model.Bairro)
+                </dd>
+                <dt class="col-sm-2" style="color: #035AA6;">
+                    @Html.DisplayNameFor(model => model.Cidade)
+                </dt>
+                <dd class="col-sm-10" style="color: #8DB9F2;">
+                    @Html.DisplayFor(model => model.Cidade)
+                </dd>
+                <dt class="col-sm-2" style="color: #035AA6;">
+                    @Html.DisplayNameFor(model => model.Estado)
+                </dt>
+                <dd class="col-sm-10" style="color: #8DB9F2;">
+                    @Html.DisplayFor(model => model.Estado)
+                </dd>
+                <dt class="col-sm-2" style="color: #035AA6;">
+                    @Html.DisplayNameFor(model => model.CEP)
+                </dt>
+                <dd class="col-sm-10" style="color: #8DB9F2;">
+                    @Html.DisplayFor(model => model.CEP)
+                </dd>
+                <dt class="col-sm-2" style="color: #035AA6;">
+                    @Html.DisplayNameFor(model => model.NomePessoaContato)
+                </dt>
+                <dd class="col-sm-10" style="color: #8DB9F2;">
+                    @Html.DisplayFor(model => model.NomePessoaContato)
+                </dd>
+            </dl>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+            <a class="btn" style="background-color: #035AA6; color: #F2F2F2; margin-right: 1rem;" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a>
+            <a class="btn" style="background-color: #F21D1D; color: #F2F2F2;" asp-action="Index">Voltar</a>
+        </div>
+    </div>
+</body>

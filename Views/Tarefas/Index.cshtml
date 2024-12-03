@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Fornecedores.Models.Fornecedor>
+
+@{
+    ViewData["Title"] = "Lista Fornecedores";
+}
+
+<body style="background-image: linear-gradient(var(--light-blue), var(--dark-blue)); color: white">
+    <style>
+        :root {
+            --light-blue: #8DB9F2;
+            --dark-blue: #035AA6;
+            --yellow: #F2D43D;
+            --red: #F21D1D;
+            --light-gray: #F2F2F2;
+        }
+
+        body {
+            background-image: linear-gradient(var(--light-blue), var(--dark-blue));
+            color: white;
+        }
+
+        .card {
+            background-color: var(--light-gray);
+            color: var(--dark-blue);
+        }
+
+        .card-footer .btn-outline-primary {
+            border-color: var(--dark-blue);
+            color: var(--dark-blue);
+        }
+
+            .card-footer .btn-outline-primary:hover {
+                background-color: var(--dark-blue);
+                color: white;
+            }
+
+        .card-footer .btn-outline-info {
+            border-color: var(--light-blue);
+            color: var(--light-blue);
+        }
+
+            .card-footer .btn-outline-info:hover {
+                background-color: var(--light-blue);
+                color: white;
+            }
+
+        .card-footer .btn-danger {
+            background-color: var(--red);
+            color: white;
+        }
+
+        .btn-success {
+            background-color: var(--yellow);
+            border-color: var(--yellow);
+            color: var(--dark-blue);
+        }
+
+            .btn-success:hover {
+                background-color: var(--dark-blue);
+                color: white;
+            }
+    </style>
+
+    <div class="col-2">
+        <h1>Fornecedores</h1>
+
+        <p style="align-items: center; justify-content: center;">
+            <a class="btn btn-success" asp-action="Create">Novo Fornecedor</a>
+        </p>
+    </div>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h4 class="card-title">@item.NomeFantasia</h4>
+                        <h5 class="card-subtitle mb-2 text-muted" style="color: var(--dark-blue);">@item.NomePessoaContato</h5>
+                        <p class="card-text">Email: @item.Email</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <a class="btn btn-outline-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                        <a class="btn btn-outline-info btn-sm" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                        <a class="btn btn-danger text-white btn-sm" asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</body>
